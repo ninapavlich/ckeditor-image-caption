@@ -1357,5 +1357,11 @@
 			};
 		};
 
-	
+	CKEDITOR.dialog.add( 'image', function( editor ) {
+		return imageDialog( editor, 'image' );
+	});
+
+	CKEDITOR.dialog.add( 'imagebutton', function( editor ) {
+		return imageDialog( editor, 'imagebutton' );
+	});
 })();

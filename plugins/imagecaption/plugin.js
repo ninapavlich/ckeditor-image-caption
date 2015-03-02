@@ -9,7 +9,7 @@
 
 ( function() {
 
-	CKEDITOR.plugins.add( 'image', {
+	CKEDITOR.plugins.add( 'imagecaption', {
 		requires: 'dialog',
 		// jscs:disable maximumLineLength
 		lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,tt,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
@@ -22,7 +22,7 @@
 			if ( editor.plugins.image2 )
 				return;
 
-			var pluginName = 'image';
+			var pluginName = 'imagecaption';
 
 			// Register the dialog.
 			CKEDITOR.dialog.add( pluginName, this.path + 'dialogs/imagecaption.js' );
@@ -54,7 +54,7 @@
 				var element = evt.data.element;
 
 				if ( element.is( 'img' ) && !element.data( 'cke-realelement' ) && !element.isReadOnly() )
-					evt.data.dialog = 'image';
+					evt.data.dialog = 'imagecaption';
 			} );
 
 			// If the "menu" plugin is loaded, register the menu items.
@@ -62,7 +62,7 @@
 				editor.addMenuItems( {
 					image: {
 						label: editor.lang.image.menu,
-						command: 'image',
+						command: 'imagecaption',
 						group: 'image'
 					}
 				} );
